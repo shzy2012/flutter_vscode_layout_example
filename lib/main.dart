@@ -57,8 +57,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     _tabController = TabController(
         length: _mytabs.length,
         vsync: this /* 通过 vsync 来确保动画在正确的时间点更新，以节省资源并提高性能。*/);
-
-    print("_tabs=>${_tabs.length}");
   }
 
   Tab _buildTab(int index, String title) {
@@ -81,12 +79,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 
   void _closeTab(int index) {
-    // print("title:${title}");
-    // int index = _tabs.indexWhere((tab) =>
-    //     (tab.child as Row).children.first is Text &&
-    //     ((tab.child as Row).children.first as Text).data == title);
-
-    print("index:${index}");
     if (index >= 0 && index < _mytabs.length) {
       setState(() {
         _tabs.removeAt(index);
